@@ -10,4 +10,6 @@ int main(){
 	write(p[1], a, 12);
 	read(p[0], b, 12);
 	printf(b);
+	close(p[0]);
+	close(p[1]);
 }
