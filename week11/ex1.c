@@ -10,6 +10,7 @@ int main(){
 	fstat(fd, s);
 	char *mem = mmap(NULL, s->st_size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 	memcpy(mem, "This is a nice day ", strlen("This is a nice day "));
+    msync(mem, s->st_size, MS_SYNC);
 	munmap(mem, s->st_size);
     close(fd);
 	return 0;
