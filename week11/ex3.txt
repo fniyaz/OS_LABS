@@ -1,0 +1,2 @@
+In the first case it forks before buffer is written to output so it prints twice in child and parent. 
+In the second case it writes the buffer before fork becouse of '\n'.
