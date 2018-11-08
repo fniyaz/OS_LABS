@@ -1,0 +1,19 @@
+ Size    | O_SYNC | B size | time
+------------------------------------
+ small   |    0   | 1024   | 0,003 
+ bigger  |    0   | 1024   | 0,003
+ biggest |    0   | 1024   | 0,042
+ small   |    0   |   1    | 0,006
+ bigger  |    0   |   1    | 0,038
+ biggest |    0   |   1    | 21,996
+------------------------------------
+ small   |    1   |  1024  | 0,045
+ bigger  |    1   |  1024  | 0,484
+ biggest |    1   |  1024  | 3:05,67
+ small   |    1   |   1    | 4,904
+ bigger  |    1   |   1    | 3:27,69
+ biggest |    1   |   1    | Didn't run, wold take too long
+ 
+ 
+ Decreasing buffer size leads to increasing runtime because of need to write more frequent.
+ Adding O_SYNC flag slows down the performance because program waits untill writing operation is finished.
